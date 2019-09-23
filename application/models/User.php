@@ -3,6 +3,23 @@ require_once APPPATH.'models/BaseModel.php';
 
 class User extends BaseModel {
 
+    protected $table = 'users';
+
+    public function get_by_id($id) {
+        $this->db->where('users.id', $id);
+        $this->db->select('users.*,users.name');
+        $this->db->from('users');
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function get_all() {
+        $this->db->select('users.*');
+        $this->db->from('users');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     function can_login($matriculation, $password)
     {
         $this->db->where('matriculation', $matriculation);
