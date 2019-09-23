@@ -13,15 +13,20 @@
 
             <form action="<?= base_url('users/create') ?>" method="POST">
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label class="label">Name</label>
-                        <input id="name" name="name" class="form-control" type="text" placeholder="Type the name" aria-describedby="nameHelp" value="<?php echo set_value('name'); ?>">
+                        <input id="name" name="name" class="form-control" type="text" placeholder="Digite o nome" aria-describedby="nameHelp" value="<?php echo set_value('name'); ?>">
                         <span class="text-danger"><?php echo form_error('name'); ?></span>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label class="label">Matriculation</label>
-                        <input id="matriculation" name="matriculation" class="form-control" type="text" placeholder="Type the matriculation" aria-describedby="matriculationHelp" value="<?php echo set_value('matriculation'); ?>">
+                        <input id="matriculation" name="matriculation" class="form-control" type="text" placeholder="Digite a matrícula" aria-describedby="matriculationHelp" value="<?php echo set_value('matriculation'); ?>">
                         <span class="text-danger"><?php echo form_error('matriculation'); ?></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="label">Senha</label>
+                        <input id="password" name="password" class="form-control" type="password" placeholder="Digite a senha" aria-describedby="passwordHelp" value="<?php echo set_value('password'); ?>">
+                        <span class="text-danger"><?php echo form_error('password'); ?></span>
                     </div>
                 </div>
                 <div class="form-group">

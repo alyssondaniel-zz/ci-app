@@ -43,6 +43,12 @@ class Users extends BaseController {
                 'rules' => 'required',
                 'errors' => ['required' => 'Você deve preencher uma %s.'],
             ],
+            [
+                'field' => 'password',
+                'label' => 'Senha',
+                'rules' => 'required',
+                'errors' => ['required' => 'Você deve preencher uma %s.'],
+            ],
         ];
 
         $this->form_validation->set_rules($rules);
@@ -58,6 +64,7 @@ class Users extends BaseController {
             $data = array(
                 'name' => $this->input->post('name'),
                 'matriculation' => $this->input->post('matriculation'),
+                'password' => $this->encryption->encrypt($this->input->post('password')),
                 'status' => ($this->input->post('status') != null),
             );
 

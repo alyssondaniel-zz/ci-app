@@ -2,7 +2,7 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div class="row">
         <div class="col-6">
-            <h2>Listing users</h2>
+            <h2>Listando usuários</h2>
         </div>
         <div class="col-6 text-right">
             <a class="btn btn-success" href="/users/new" role="button">Novo usuário</a>
