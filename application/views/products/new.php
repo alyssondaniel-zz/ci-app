@@ -51,3 +51,21 @@
         </div>
     </div>
 </main>
+<script>
+    new Cleave('.input-forward-price', {
+        numeral: true,
+        numeralDecimalMark: '.',
+        delimiter: ''
+    });
+
+    new Cleave('.input-cash-price', {
+        numeral: true,
+        numeralDecimalMark: '.',
+        delimiter: ''
+    });
+
+    new Cleave('.input-barcode', {
+        numeral: true,
+        delimiter: ''
+    });
+</script>

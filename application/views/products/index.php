@@ -2,10 +2,10 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div class="row">
         <div class="col-6">
-            <h2>Listando usuários</h2>
+            <h2>Listando produtos</h2>
         </div>
         <div class="col-6 text-right">
-            <a class="btn btn-success" href="/products/new" role="button">Novo usuário</a>
+            <a class="btn btn-success" href="/products/new" role="button">Novo</a>
         </div>
     </div>
     <div class="row">
@@ -35,7 +35,7 @@
                             <td><?= $product->id ?></td>
                             <td><?= $product->description ?></td>
                             <td><?= number_format($product->cash_price, 2, '.', '') ?></td>
-                            <td><?= $product->forward_price ?></td>
+                            <td><?= number_format($product->forward_price, 2, '.', '') ?></td>
                             <td><?= $product->barcode ?></td>
                             <td><?= $product->user_name ?></td>
                             <td><?= nice_date($product->created_at,'d/m/Y H:i:s') ?></td>

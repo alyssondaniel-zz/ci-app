@@ -5,10 +5,6 @@ class Product extends BaseModel {
 
     protected $table = 'products';
 
-    // public function __construct() {
-    //     parent::__construct();
-    // }
-
     public function get_by_id($id) {
         $this->db->where('products.id', $id);
         $this->db->select('products.*,users.name as user_name');
