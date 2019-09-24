@@ -40,8 +40,11 @@ class Users extends BaseController {
             [
                 'field' => 'matriculation',
                 'label' => 'Matrícula',
-                'rules' => 'required',
-                'errors' => ['required' => 'Você deve preencher uma %s.'],
+                'rules' => 'required|trim|is_unique[users.matriculation]',
+                'errors' => [
+                    'required' => 'Você deve preencher uma %s.',
+                    'is_unique' => 'A %s informada já foi cadastrada.'
+                ],
             ],
             [
                 'field' => 'password',
@@ -144,7 +147,7 @@ class Users extends BaseController {
 
     function validation()
     {
-        $this->form_validation->set_rules('matriculation', 'Matrícula', 'required|trim');
+        $this->form_validation->set_rules('matriculation', 'Matrícula', 'required|trim|is_unique[users.matriculation]');
         $this->form_validation->set_rules('password', 'Senha', 'required');
         if($this->form_validation->run())
         {

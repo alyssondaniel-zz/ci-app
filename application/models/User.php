@@ -28,12 +28,12 @@ class User extends BaseModel {
         {
             foreach($query->result() as $row)
             {
-                if($password == $this->encryption->decrypt($row->password) && $row->status == true)
-                {
+                if (
+                    $password == $this->encryption->decrypt($row->password)
+                    && $row->status == true
+                ) {
                     $this->session->set_userdata('id', $row->id);
-                }
-                else
-                {
+                } else {
                     return 'Wrong Password';
                 }
             }

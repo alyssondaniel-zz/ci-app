@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Template de login, usando Bootstrap.</title>
+    <title>Entrar</title>
 
     <!-- Principal CSS do Bootstrap -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">

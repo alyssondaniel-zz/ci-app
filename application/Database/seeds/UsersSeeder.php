@@ -10,7 +10,7 @@ class UsersSeeder extends Seeder {
         //seed records manually
         $data = [
             'name' => 'admin',
-            'matriculation' => '9871',
+            'matriculation' => '111111',
             'password' => $this->encryption->encrypt('123123'),
             'status' => true
         ];

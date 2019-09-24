@@ -8,7 +8,12 @@ class BaseController extends CI_Controller {
     {
         parent::__construct();
 
-        if (!$this->session->userdata('id'))
+        if
+        (
+            !$this->session->userdata('id')
+            && $this->router->fetch_method() != 'signin'
+            && $this->router->fetch_method() != 'validation'
+        )
         {
             redirect(base_url('users/signin'));
         }
