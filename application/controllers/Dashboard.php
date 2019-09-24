@@ -2,16 +2,9 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+require_once APPPATH.'controllers/BaseController.php';
 
-    public function __construct()
-    {
-        parent::__construct();
-        if(!$this->session->userdata('id'))
-        {
-            redirect(base_url('users/signin'));
-        }
-    }
+class Dashboard extends BaseController {
 
     public function index()
     {

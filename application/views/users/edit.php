@@ -15,22 +15,22 @@
             }
             ?>
 
-            <form action="<?= base_url('users/update/'.$user->id) ?>" method="POST">
+            <form action="<?= base_url('users/update/'.$data->id) ?>" method="POST">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label class="label">Name</label>
-                        <input id="name" name="name" class="form-control" type="text" value="<?= $user->name ?>" placeholder="Type the name" aria-describedby="nameHelp">
+                        <input id="name" name="name" class="form-control" type="text" value="<?= $data->name ?>" placeholder="Type the name" aria-describedby="nameHelp">
                         <span class="text-danger"><?php echo form_error('name'); ?></span>
                     </div>
                     <div class="form-group col-md-6">
                         <label class="label">Matriculation</label>
-                        <input id="matriculation" name="matriculation" class="form-control" type="text" value="<?= $user->matriculation ?>" placeholder="Type the matriculation" aria-describedby="matriculationHelp">
+                        <input id="matriculation" name="matriculation" class="form-control" type="text" value="<?= $data->matriculation ?>" placeholder="Type the matriculation" aria-describedby="matriculationHelp">
                         <span class="text-danger"><?php echo form_error('matriculation'); ?></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-check">
-                        <input name="status" class="form-check-input" type="checkbox" id="gridCheck" <?= $user->status ? 'checked' : '' ?>>
+                        <input name="status" class="form-check-input" type="checkbox" id="gridCheck" <?= $data->status ? 'checked' : '' ?>>
                         <label class="form-check-label" for="gridCheck">
                             Ativo
                         </label>

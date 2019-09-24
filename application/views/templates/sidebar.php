@@ -14,21 +14,21 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span data-feather="file"></span>
-                    Pedidos
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/products">
                     <span data-feather="shopping-cart"></span>
                     Produtos
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/customers">
                     <span data-feather="users"></span>
                     Clientes
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <span data-feather="file"></span>
+                    Pedidos
                 </a>
             </li>
             <li class="nav-item">

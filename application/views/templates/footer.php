@@ -5,11 +5,30 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <!-- <script src="../../assets/js/vendor/popper.min.js"></script> -->
     <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/cleave.min.js"></script>
 
     <!-- Ícones -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
-      feather.replace()
+        feather.replace()
+        new Cleave('.input-forward-price', {
+            // prefix: 'R$',
+            numeral: true,
+            numeralDecimalMark: '.',
+            delimiter: ''
+        });
+
+        new Cleave('.input-cash-price', {
+            // prefix: 'R$',
+            numeral: true,
+            numeralDecimalMark: '.',
+            delimiter: ''
+        });
+
+        new Cleave('.input-barcode', {
+            numeral: true,
+            delimiter: ''
+        });
     </script>
 
   </body>

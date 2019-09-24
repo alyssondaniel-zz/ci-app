@@ -2,7 +2,7 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div class="row">
         <div class="col">
-            <h2 class="title">Edit User</h2>
+            <h2 class="title">Novo usuário</h2>
 
             <?php
             if($this->session->flashdata('message'))
@@ -37,7 +37,7 @@
                         </label>
                     </div>
                 </div>
-                <button class="btn btn-primary" type="submit">Create User</button>
+                <button class="btn btn-primary" type="submit">Criar</button>
             </form>
             <br />
             <a href="<?= base_url('users')?>">Voltar</a>

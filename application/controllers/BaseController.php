@@ -7,7 +7,6 @@ class BaseController extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-
         if
         (
             !$this->session->userdata('id')
@@ -18,7 +17,7 @@ class BaseController extends CI_Controller {
             redirect(base_url('users/signin'));
         }
 
-        $this->load->helper('url', 'form');
+        $this->load->helper(['url', 'form', 'date']);
         $this->load->library('form_validation');
         $this->load->library('encryption');
     }
