@@ -1,3 +1,12 @@
+## Install and configurations
+1. Run `git clone git@github.com:alyssondaniel/ci-app.git` and `cd ci-app`;
+2. Install dependencies: `composer install`;
+3. Create a database mysql with name **ci_app**;
+4. Run `php index.php tools migrate` for create tables
+4. Run `seed UsersSeeder` for create a first user
+6. Run `php -S localhost:3000`
+7. Tests `cd application/tests` and run `phpunit`
+
 ###################
 What is CodeIgniter
 ###################
