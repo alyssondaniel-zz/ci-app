@@ -88,7 +88,7 @@ new Cleave('.input-registry', {
 
 new Cleave('.input-income', {
     numeral: true,
-    numeralDecimalMark: ',',
-    delimiter: '.'
+    numeralDecimalMark: '.',
+    delimiter: ''
 });
 </script>

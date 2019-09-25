@@ -12,6 +12,7 @@ class BaseController extends CI_Controller {
             !$this->session->userdata('id')
             && $this->router->fetch_method() != 'signin'
             && $this->router->fetch_method() != 'validation'
+            && $this->router->fetch_method() != 'get_amount_by_id'
         )
         {
             redirect(base_url('users/signin'));

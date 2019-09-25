@@ -8,9 +8,13 @@ class Dashboard extends BaseController {
 
     public function index()
     {
+        $this->load->model('user');
+
+        $data['user'] = $this->user->get_by_id($this->session->userdata('id'));
+
         $this->load->view('templates/header');
         $this->load->view('templates/navbar');
-        $this->load->view('dashboard');
+        $this->load->view('dashboard', $data);
         $this->load->view('templates/footer');
     }
 

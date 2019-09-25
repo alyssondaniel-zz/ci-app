@@ -14,6 +14,7 @@ class Products extends BaseController {
 
         $this->load->view('layouts/default', $data);
     }
+
     public function new() {
         $data['data'] = [];
         $data['view'] = 'products/new';
@@ -80,7 +81,11 @@ class Products extends BaseController {
     }
 
     public function edit($id) {
-        $data['data'] = $this->product->get_by_id($id);;
+        $data['data'] = $this->product->get_by_id($id);
+
+        if ( empty($data['data']) ) {
+            show_404();
+        }
 
         $data['view'] = 'products/edit';
 
@@ -88,6 +93,12 @@ class Products extends BaseController {
     }
 
     public function update($id) {
+        $data['data'] = $this->product->get_by_id($id);
+
+        if ( empty($data['data']) ) {
+            show_404();
+        }
+
         $rules = [
             [
                 'field' => 'description',
@@ -146,11 +157,28 @@ class Products extends BaseController {
     }
 
     public function remover($id){
+        $data['data'] = $this->product->get_by_id($id);
+
+        if ( empty($data['data']) ) {
+            show_404();
+        }
+
         $this->product->delete($id);
 
         $this->session->set_flashdata('success', true);
         $this->session->set_flashdata('message', 'Produto removido com êxito!');
 
         redirect(base_url('products'));
+    }
+
+    public function get_amount_by_id($id) {
+        $data['success'] = $this->product->get_by_id($id);
+
+        if ( empty($data['success']) ) {
+            $data['error'] = true;
+            $data['message'] = 'Produto não encontrado!';
+        }
+
+        echo json_encode($data);
     }
 }

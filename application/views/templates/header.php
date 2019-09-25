@@ -15,7 +15,9 @@
 
     <!-- Estilos customizados para esse template -->
     <link href="/assets/css/dashboard.css" rel="stylesheet">
+
     <script src="/assets/js/cleave.min.js"></script>
+    <script src="/assets/js/jquery-3.4.1.js"></script>
 </head>
 <body>
     <div class="container-fluid">

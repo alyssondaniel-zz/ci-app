@@ -139,7 +139,7 @@ class Users extends BaseController {
             $result = $this->user->can_login($this->input->post('matriculation'), $this->input->post('password'));
             if($result == '')
             {
-                redirect(base_url('users'));
+                redirect(base_url('dashboard'));
             }
             else
             {

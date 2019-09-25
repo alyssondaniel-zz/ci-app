@@ -35,7 +35,7 @@ class Customers extends BaseController {
                 'rules' => 'required',
                 'errors' => [
                     'required' => 'Você deve preencher um %s.',
-                    'is_unique' => 'A %s informada já foi cadastrada.'
+                    'is_unique' => 'O %s informado já foi cadastrada.'
                 ],
             ],
             [
@@ -110,12 +110,22 @@ class Customers extends BaseController {
     public function edit($id) {
         $data['data'] = $this->customer->get_by_id($id);;
 
+        if ( empty($data['data']) ) {
+            show_404();
+        }
+
         $data['view'] = 'customers/edit';
 
         $this->load->view('layouts/default', $data);
     }
 
     public function update($id) {
+        $data['data'] = $this->customer->get_by_id($id);;
+
+        if ( empty($data['data']) ) {
+            show_404();
+        }
+
         $rules = [
             [
                 'field' => 'name',
@@ -202,6 +212,12 @@ class Customers extends BaseController {
     }
 
     public function remover($id){
+        $data['data'] = $this->customer->get_by_id($id);;
+
+        if ( empty($data['data']) ) {
+            show_404();
+        }
+
         $this->customer->delete($id);
 
         $this->session->set_flashdata('success', true);
